@@ -146,3 +146,12 @@ create table tbl_member_auth (
     auth    varchar2(50) not null,
     constraint fk_member_auth foreign key(userid) references tbl_member(userid)
 );
+
+-- users by users -query
+select userid username, userpw password, enabled from tbl_member
+where userid ='admin90'
+
+
+
+-- authorities-by-username-query
+select userid username, auth authority from tbl_member_auth where userid = 'admin90'
