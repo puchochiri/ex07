@@ -1,4 +1,4 @@
-package org.zerock.service;
+package org.zerock.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,22 +13,25 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class CustomUserDetailsService implements UserDetailsService {
-
+	
+	
 	@Setter(onMethod_ = { @Autowired })
 	private MemberMapper memberMapper;
-	
+
+	// http://localhost:9047/sample/admin
+	// admin90//pw90
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		
-		log.info("Lord User By UserName : " + userName);
-		return null;
+		log.warn("Load User By UserName : " + userName);
 		
 		// userName means userid
-		//MemberVO vo = memberMapper.read(userName);
+		MemberVO vo = memberMapper.read(userName);
 		
-		//log.info(" queried by member mapper: " + vo);
+		log.warn("queried by member mapper: " + vo);
 		
-		//return vo == null ? null : new CustomUser(vo);
+		return vo == null ? null : new CustomUser(vo);
+		
 	}
 
 }

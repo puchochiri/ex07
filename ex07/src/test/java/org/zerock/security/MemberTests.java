@@ -78,6 +78,7 @@ public class MemberTests {
 	
 	}
 */	
+	/*
 	@Test
 	public void testInsertAuth() {
 		
@@ -119,4 +120,5 @@ public class MemberTests {
 		}//end for
 		
 	}
+	*/
 }
