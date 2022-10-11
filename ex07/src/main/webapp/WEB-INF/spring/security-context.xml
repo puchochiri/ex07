@@ -34,10 +34,11 @@
 
 	<!-- <security:csrf disabled="true" /> -->	
 	
-	<security:logout logout-url="/customLogout" invalidate-session="true"/>
-		
-	<!-- 아이디 저장 -->
+		<!-- 아이디 저장 -->
 	<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800" />
+	
+	<security:logout logout-url="/customLogout" invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
+	
 		
 </security:http>
 

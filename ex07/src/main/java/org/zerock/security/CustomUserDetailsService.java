@@ -17,7 +17,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	
 	@Setter(onMethod_ = { @Autowired })
 	private MemberMapper memberMapper;
-
+	// http://localhost:9047/customLogin
 	// http://localhost:9047/sample/admin
 	// admin90//pw90
 	@Override
